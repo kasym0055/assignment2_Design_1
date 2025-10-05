@@ -4,11 +4,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.concurrent.atomic.AtomicLong;
 
-/**
- * Simple performance tracker: counts comparisons, swaps, array accesses.
- * Use manually in benchmarking harness when measuring algorithms.
- */
-public class PerformanceTracker {
+public class PerformanceTrackerA {
     private AtomicLong comparisons = new AtomicLong(0);
     private AtomicLong swaps = new AtomicLong(0);
     private AtomicLong accesses = new AtomicLong(0);
