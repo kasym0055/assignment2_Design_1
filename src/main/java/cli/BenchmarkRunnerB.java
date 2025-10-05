@@ -13,7 +13,7 @@ import java.util.Scanner;
  *
  * It will run for sizes 100, 1000, 10000, 100000 (if memory allows) and output CSV to /tmp or project folder.
  */
-public class BenchmarkRunner {
+public class BenchmarkRunnerB {
     public static void main(String[] args) throws Exception {
         int[] sizes = new int[] {100, 1000, 10000, 100000};
         Random rnd = new Random(42);
