@@ -1,30 +1,35 @@
-# Assignment 2 — Pair 4: Min-Heap (Student A)
+# assignment2-max-heap (Student B)
 
-## Overview
-This repository contains the implementation of a **Min-Heap** data structure with the following operations:
-- `push` (insert element)
-- `peek` (get the minimum element)
-- `pop` (extract the minimum element)
-- `decreaseKey` (decrease the value of a given node)
-- `merge` (merge two heaps in O(n+m) time via bottom-up heapify)
+**Algorithm:** Max-Heap implementation (in-place, 1-based indexing)  
+**Student role:** Student B (Max-Heap Implementation with increase-key and extract-max)
 
-The project includes:
-- **PerformanceTracker** to measure comparisons, swaps, reads/writes, allocations  
-- **CLI BenchmarkRunner** to generate CSV benchmark data  
-- **Unit tests** for correctness and edge cases  
+## Structure
+- `src/main/java/algorithms/MaxHeap.java` - main implementation
+- `src/main/java/metrics/PerformanceTracker.java` - simple counters & CSV writer
+- `src/main/java/cli/BenchmarkRunner.java` - simple CLI benchmark runner
+- `src/test/java/algorithms/MaxHeapTest.java` - JUnit 5 tests
+- `docs/analysis-report.pdf` - individual analysis report placeholder
+- `docs/performance-plots/` - place for plots (empty)
 
----
+## How to build & test
+Requires Java 17 and Maven.
 
-## Requirements
-- Java 17+
-- Maven 3.8+
+Build:
+```
+mvn -q -DskipTests package
+```
 
----
-
-## Build & Test
-```bash
-# Run all unit tests
+Run tests:
+```
 mvn test
+```
 
-# Package into a runnable JAR
-mvn -DskipTests package
+Run benchmark (after building classes):
+```
+java -cp target/classes:target/test-classes cli.BenchmarkRunner
+```
+
+## Notes
+- Implementation uses 1-based indexing internally for simpler math.
+- increaseKey(i, newKey) assumes the caller knows the 1-based index; in real-world use you'd typically expose increaseKey by value or maintain handles.
+- PerformanceTracker is a simple helper; for precise microbenchmarks consider JMH (an example commit message in the assignment suggests JMH).
